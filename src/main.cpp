@@ -1,12 +1,11 @@
-##include "Lista.h"
+#include <cstdlib>
+using namespace std;
 
-int int main()
+int main()
 {
-	Lista l = Lista(3);
-	l.AddInicio(4);
-	l.AddInicio(5);
-	l.AddInicio(6);
-	l.Show();
-	std::cout<<"hello World<<"<<std::endl;
-	return 0;
+    // TO DO...
+
+    // xdg-open "imagen.jpg" //Comando de terminal para abrir imagen
+    system("xdg-open ../network_map.png");
+    return 0;
 }

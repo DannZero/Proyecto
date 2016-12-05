@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/daniel/Documentos/Algoritmos y Estructuras de Datos/Proyecto/build",
+  "command": "/usr/bin/c++    -I\"/home/daniel/Documentos/Algoritmos y Estructuras de Datos/Proyecto/include\"  -O2 -g -DNDEBUG   -o CMakeFiles/Proyecto.dir/src/main.cpp.o -c \"/home/daniel/Documentos/Algoritmos y Estructuras de Datos/Proyecto/src/main.cpp\"",
+  "file": "/home/daniel/Documentos/Algoritmos y Estructuras de Datos/Proyecto/src/main.cpp"
+}
+]
