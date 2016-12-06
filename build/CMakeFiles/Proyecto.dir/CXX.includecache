@@ -6,7 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/daniel/Documentos/Algoritmos y Estructuras de Datos/Proyecto/src/main.cpp
+../include/Dijkstra.h
+Nodo.h
+../include/Nodo.h
+
+../include/Nodo.h
+vector
+-
+string
+-
+iostream
+-
+
+/Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Dijkstra.cpp
+
+/Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Nodo.cpp
+
+/Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/main.cpp
 cstdlib
 -
+Dijkstra.h
+/Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Dijkstra.h
 
