@@ -1,0 +1,32 @@
+EW-CG		NS		NE		DT			CC-CE
+Pasir Ris	Jurong East	HarbourFront	Bukit Panjang		Dhoby Ghaut
+Tampines	Bukit Batok	Outram Park	Cashew			Bras Basah	
+Simei		Bukit Gombak	Chinatown	Hillview		Esplanade
+Tana Merah	Choa Chu Kang	Clarke Quay	Beauty World		Promenade
+Changi Airport*	Yew Tee		Dhoby Ghaut	King Albert Park	Nicoll Highway
+Expo*		Kranji		Little India	Sixth Avenue		Stadium
+Bedok		Marsiling	Ferrer park	Tan Kah Kee		Mountbatten
+Kembangan	Woodlands	Boon Keng	Botanic Gardens		Dakota
+Eunos		Admiralty	Potong Pasir	Stevens			Paya Lebar
+Paya Lebar	Sembawang	Woodleigh	Newton			MacPherson
+Aljunied	Canberra	Serangoon	Little India		Tai Seng
+Kallang		Yishun		Kovan		Rochor			Bartley
+Lavender	Khatib		Hougang		Bugis			Serangoon
+Bugis		Yio Chu Kang	Buangkok	Promenade		Lorong Chuan
+City Hall	Ang Mo kio	Sengkang	Bayfront		Bishan
+Raffles Place	Bishan		Punggol		Downtown		Marymount
+Tanjong Pagar	Braddell			Telok Ayer		Caldecott
+Outram Park	Toa Payoh			Chinatown		Botanic Gardens
+Tiong Bahru	Novena							Farrer Road
+Redhill		Newton							Holland Village
+Queenstown	Orchard							Buona Vista
+Commonwalth	Somerset						one-north
+Buona Vista	Dhoby Ghaut						Kent Ridge
+Dover									How Par Villa
+Clementi								Pasir Panjang
+Jurying East								Labrador Park
+Chinese Garden 								Telok Blangah	
+Lakeside								HarbourFront
+Boon Lay								Bayfront*
+Pioneer									Marina Bay*
+Joo Koon
