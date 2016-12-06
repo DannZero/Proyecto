@@ -15,16 +15,15 @@ int buscarEstacion(string s);
 
 int main()
 {
-    
 
     cout << "Planeador de viajes MRT Singapur" << endl;
     cout << "________________________________" << endl;
 
     short opcion;
     string inicio, destino;
-	int varI;
+    int varI;
 
-	initGrafo();
+    initGrafo();
 
     Dijkstra d = Dijkstra(grafo);
     do {
@@ -41,9 +40,9 @@ int main()
             cin >> inicio;
             cout << "Destino: ";
             cin >> destino;
-			varI = buscarEstacion(inicio);
+            varI = buscarEstacion(inicio);
             d.encontrarCaminos(varI);
-			varI = buscarEstacion(destino);
+            varI = buscarEstacion(destino);
             d.imprimirCamino(varI);
             break;
         case 0:
@@ -88,18 +87,22 @@ void initGrafo()
 void leerArchivo(string path)
 {
     ifstream archivo(path);
-    bool comienzo = true;
+    int comienzo = 0;
     string linea;
     if (archivo.is_open()) {
         while (getline(archivo, linea)) {
-		cout << "Cargando " << path << endl;
-            if (!comienzo) {
-                grafo[estaciones.size()-1].push_back(Nodo(estaciones.size() - 2, 3));
-                grafo[estaciones.size() - 2].push_back(Nodo(estaciones.size(), 3));
+            cout << "Cargando " << path << endl;
+            if (comienzo > 0) {
+                if (comienzo != 1) {
+                    grafo.front().push_back(Nodo(grafo.size() - 2, 3));
+                    grafo[grafo.size() - 2].push_back(Nodo(estaciones.size(), 3));
+                } else {
+                    grafo.front().push_back(Nodo(0, 3));
+                }
             }
 
             estaciones.push_back(linea);
-            comienzo = false;
+            comienzo++;
         }
     } else {
         cout << "Fallo al cargar la linea de metro" << endl;
