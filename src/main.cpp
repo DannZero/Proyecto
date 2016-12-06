@@ -9,16 +9,24 @@ vector<vector<Nodo> > grafo;
 
 void abrirImagen();
 void initGrafo();
+void leerArchivo(string path);
+void buscarTransbordos();
+int buscarEstacion(string s);
 
 int main()
 {
-    //vector<Nodo> vertices = initGrafo();
+    
 
     cout << "Planeador de viajes MRT Singapur" << endl;
     cout << "________________________________" << endl;
 
     short opcion;
-    int inicio, destino;
+    string inicio, destino;
+	int varI;
+
+	initGrafo();
+
+    Dijkstra d = Dijkstra(grafo);
     do {
         cout << "1. Mostrar Mapa" << endl;
         cout << "2. Iniciar Viaje" << endl;
@@ -33,15 +41,10 @@ int main()
             cin >> inicio;
             cout << "Destino: ";
             cin >> destino;
-            /*
-            //funcion que activa el dijkstra
-			Dijkstra d = Dijkstra(vertices); // Aun hay que armar el grafo
-			d.encontrarCaminos(inicio);
-			
-			cout << "El trayecto mas corto es:" << endl;
-			d.imprimirCamino(destino);
-			cout << "Que tenga buen viaje ;)" << endl;
-			*/
+			varI = buscarEstacion(inicio);
+            d.encontrarCaminos(varI);
+			varI = buscarEstacion(destino);
+            d.imprimirCamino(varI);
             break;
         case 0:
             break;
@@ -72,5 +75,55 @@ void abrirImagen()
 
 void initGrafo()
 {
-    fstream archivo;
+    leerArchivo("../Lineas/CC.txt");
+    leerArchivo("../Lineas/CE.txt");
+    leerArchivo("../Lineas/CG.txt");
+    leerArchivo("../Lineas/DT.txt");
+    leerArchivo("../Lineas/EW.txt");
+    leerArchivo("../Lineas/NE.txt");
+    leerArchivo("../Lineas/NS.txt");
+    buscarTransbordos();
+}
+
+void leerArchivo(string path)
+{
+    ifstream archivo(path);
+    bool comienzo = true;
+    string linea;
+    if (archivo.is_open()) {
+        while (getline(archivo, linea)) {
+		cout << "Cargando " << path << endl;
+            if (!comienzo) {
+                grafo[estaciones.size()-1].push_back(Nodo(estaciones.size() - 2, 3));
+                grafo[estaciones.size() - 2].push_back(Nodo(estaciones.size(), 3));
+            }
+
+            estaciones.push_back(linea);
+            comienzo = false;
+        }
+    } else {
+        cout << "Fallo al cargar la linea de metro" << endl;
+    }
+}
+
+void buscarTransbordos()
+{
+    for (int i = 0; i < estaciones.size(); i++) {
+        for (int j = 0; j < i; j++) {
+            if (estaciones[i] == estaciones[j]) {
+                grafo[i].push_back(Nodo(j, 3));
+                grafo[j].push_back(Nodo(i, 3));
+            }
+        }
+    }
+}
+
+int buscarEstacion(string s)
+{
+    for (int i = estaciones.size() - 1; i > 0; --i) {
+        if (estaciones[i] == s) {
+            return i;
+        }
+    }
+    return -1;
 }

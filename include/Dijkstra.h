@@ -24,7 +24,7 @@ public:
     vector<vector<Nodo> > vertices; // Esto es el grafo
     priority_queue<Nodo, vector<Nodo>, cmp> cola; //Cola de prioridad para ordenar los nodos
 
-    Dijkstra(vector<vector<Nodo> > vertices, int numVertices);
+    Dijkstra(vector<vector<Nodo> > vertices);
     void relajacion(int actual, int adyacente, int peso);
     void imprimirCamino(int destino);
     void encontrarCaminos(int inicio);
