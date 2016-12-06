@@ -31,7 +31,7 @@ int main()
 	Nodo MarinaSouthPier=Nodo("MarinaSouthPier");
 	Nodo TanahMerah=Nodo("TanahMerah);
 	Nodo PasirRis=Nodo("PasirRis");
-	Nodo ChangiAirport=Nodo("ChangiA");
+	Nodo ChangiAirport=Nodo("ChangiAirport");
     
     cout << "Planeador de viajes MRT Singapur" << endl;
     cout << "________________________________" << endl;
