@@ -1,9 +1,8 @@
 #include "Dijkstra.h"
 
-Dijkstra::Dijkstra(vector<Nodo> verticesAdyacentes[MAX_NODOS], int numVertices)
-    : numVertices(numVertices)
+Dijkstra::Dijkstra(vector<vector<Nodo> > verticesAdyacentes, int numVertices)
+    : numVertices(numVertices), vertices(verticesAdyacentes)
 {
-    vector<Nodo> vertices(*verticesAdyacentes);
     for (int i = 0; i <= numVertices; ++i) {
         distancia[i] = __INT_MAX__; //inicializamos todas las distancias con valor infinito
         visitado[i] = false; //inicializamos todos los vértices como no visitados

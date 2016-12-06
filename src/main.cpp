@@ -4,9 +4,11 @@
 
 using namespace std;
 
-string[126] estaciones;
+vector<string> estaciones; // Los nombres de las estaciones
+vector<vector<Nodo> > grafo;
+
 void abrirImagen();
-vector<Nodo> initGrafo();
+void initGrafo();
 
 int main()
 {
@@ -68,45 +70,7 @@ void abrirImagen()
 #endif
 }
 
-vector<Nodo>[126] initGrafo()
+void initGrafo()
 {
-    vector<Nodo> vertices[126];
-	int iVert = 0;
-    // Linea EW
-    fstream archivo("Lineas/EW.txt", ios::in);
-    if (archivo.is_open()) {
-        for (int i = 0; getline(archivo, estaciones[i]) && i<29 ; ++i) {
-            vertices[iVert] = vector<Nodo> (Nodo(iVert, 1));
-            if (i > 0) {
-                vertices[iVert].push_back(vertices[iVert - 1]);
-                vertices[iVert - 1].push_back(vertices[iVert]);
-            }
-            iVert++;
-        }
-        archivo.close;
-    } else
-        cout << "No se pudo abrir el archivo";
-	// Linea CG
-	archivo.open("Lineas/CG.txt", ios::in);
-    if (archivo.is_open()) {
-        for (int i = 0, j = 0; getline(archivo, estaciones[i]) && i<2 ; ++i) {
-            vertices[iVert] = vector<Nodo> (Nodo(iVert, 1));
-            if (i > 29) {
-                vertices[iVert].push_back(vertices[iVert - 1]);
-                vertices[iVert - 1].push_back(vertices[iVert]);
-            }
-			for (j = 0; j < iVert ; ++j) // si son la misma estacion se agregan a ella los nodos
-			{
-				if (estaciones[iVert] == estaciones[j])
-				{
-					vertices[j].push_back(vertices[iVert][0]);
-				}
-			}
-            iVert++;
-        }
-        archivo.close;
-    } else
-        cout << "No se pudo abrir el archivo";
-		//hjfdsahjvkf hg vh ddsadgdasfg askujyfg kajusdfg akujsygf a
-    
+    fstream archivo;
 }

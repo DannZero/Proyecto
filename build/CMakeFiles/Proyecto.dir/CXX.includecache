@@ -35,6 +35,8 @@ Nodo.h
 /Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/main.cpp
 cstdlib
 -
+fstream
+-
 Dijkstra.h
 /Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Dijkstra.h
 
