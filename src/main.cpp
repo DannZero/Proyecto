@@ -64,9 +64,9 @@ void abrirImagen()
 #ifdef _WIN32 // Windows (x64 and x86)
 //El de windows
 #elif __linux__
-    system("xdg-open network_map.png");
+    system("xdg-open ../network_map.png");
 #elif __APPLE__
-    system("open network_map.png");
+    system("open ../network_map.png");
 #endif
 }
 
