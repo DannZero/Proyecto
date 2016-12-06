@@ -7,6 +7,32 @@ void abrirImagen();
 
 int main()
 {
+	Nodo JooKoon=Nodo("JooKoon");
+	Nodo JurongEast=Nodo("JurongEast");
+	Nodo BuonaVista=Nodo("BuonaVista");
+	Nodo OutramPark=Nodo("OutramPark");
+	Nodo HarbourFront=Nodo("HarbourFront");
+	Nodo BukitPanjang=Nodo("BukitPanjang");
+	Nodo BotanicGardens=Nodo("BotanicGardens");
+	Nodo Bishan=Nodo("Bishan"); 
+	Nodo Newton=Nodo("Newton");
+	Nodo LittleIndia=Nodo("LittleIndia");
+	Nodo DhobyGhout=Nodo("DhobyGhaut");
+	Nodo Chinatown=Nodo("Chinatown");
+	Nodo CityHall=Nodo("CityHall");
+	Nodo RafflesPlace=Nodo("RafflesPlace");
+	Nodo Serangoon=Nodo("Serangoon");
+	Nodo Punggol=Nodo("Punggol");
+	Nodo PayaLebar=Nodo("PayLebar");
+	Nodo Bugis=Nodo("PayLebar");
+	Nodo Bayfront=Nodo("Bayfront");
+	Nodo Promenade=Nodo("Promenade");
+	Nodo MarinaBay=Nodo("MarinaBay");
+	Nodo MarinaSouthPier=Nodo("MarinaSouthPier");
+	Nodo TanahMerah=Nodo("TanahMerah);
+	Nodo PasirRis=Nodo("PasirRis");
+	Nodo ChangiAirport=Nodo("ChangiA");
+    
     cout << "Planeador de viajes MRT Singapur" << endl;
     cout << "________________________________" << endl;
 
