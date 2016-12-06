@@ -9,9 +9,13 @@
 ../include/Dijkstra.h
 Nodo.h
 ../include/Nodo.h
+stack
+-
 
 ../include/Nodo.h
 vector
+-
+list
 -
 string
 -
@@ -19,8 +23,12 @@ iostream
 -
 
 /Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Dijkstra.cpp
+Dijkstra.h
+/Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Dijkstra.h
 
 /Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Nodo.cpp
+Nodo.h
+/Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Nodo.h
 
 /Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/main.cpp
 cstdlib
