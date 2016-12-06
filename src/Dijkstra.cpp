@@ -1,8 +1,8 @@
 #include "Dijkstra.h"
 
-Dijkstra::Dijkstra(vector<Nodo> adyacentes[MAX_NODOS])
-    : adyacentes(adyacentes)
+Dijkstra::Dijkstra(vector<Nodo> adyacentesGrafo[MAX_NODOS])
 {
+    vector<Nodo> adyacentes (*adyacentesGrafo);
     for (int i = 0; i <= numVertices; ++i) {
         distancia[i] = __INT_MAX__; //inicializamos todas las distancias con valor infinito
         visitado[i] = false; //inicializamos todos los vértices como no visitados
@@ -16,14 +16,14 @@ void Dijkstra::relajacion(int actual, int adyacente, int peso)
     if (distancia[actual] + peso < distancia[adyacente]) {
         distancia[adyacente] = distancia[actual] + peso; //se actualiza la distancia
         previo[adyacente] = actual;
-        Q.push(Nodo(adyacente, distancia[adyacente])); //agregamos adyacente a la cola de prioridad
+        cola.push(Nodo(adyacente, distancia[adyacente])); //agregamos adyacente a la cola de prioridad
     }
 }
 
 void Dijkstra::imprimirCamino(int destino)
 {
     if (previo[destino] != -1) //si aun existe un vertice previo
-        print(previo[destino]); // recursivo
+        imprimirCamino(previo[destino]); // recursivo
     cout << "\t" << destino << endl;
 }
 
@@ -50,7 +50,7 @@ void Dijkstra::encontrarCaminos(int inicio)
             if (!visitado[ady])
             {
                 // SI no fue visitado se intenta relajar el peso
-                relajacion(actual, adyacente, peso);
+                relajacion(actual, ady, peso);
             }
         }
     }

@@ -29,6 +29,7 @@ int main()
             cin >> inicio;
             cout << "Destino: ";
 			cin >> destino;
+			/*
             //funcion que activa el dijkstra
 			Dijkstra d = Dijkstra(adyacentes); // Aun hay que armar el grafo
 			d.encontrarCaminos(inicio);
@@ -36,7 +37,7 @@ int main()
 			cout << "El trayecto mas corto es:" << endl;
 			d.imprimirCamino(destino);
 			cout << "Que tenga buen viaje ;)" << endl;
-
+			*/
             break;
         case 0:
             break;

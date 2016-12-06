@@ -7,6 +7,14 @@
 using namespace std;
 
 class Dijkstra {
+private:
+    // Para invertir el orden de la cola de prioridad
+    struct cmp { 
+        bool operator()(const Nodo& a, const Nodo& b)
+        {
+            return a.pesoArista > b.pesoArista;
+        }
+    };
 public:
     bool visitado[MAX_NODOS];
     int distancia[MAX_NODOS];
@@ -20,12 +28,4 @@ public:
     void imprimirCamino(int destino);
     void encontrarCaminos(int inicio);
 
-private:
-// Para invertir el orden de la cola de prioridad
-    struct cmp { 
-        bool operator()(const Nodo& a, const Nodo& b)
-        {
-            return a.pesoArista > b.pesoArista;
-        }
-    };
 };
