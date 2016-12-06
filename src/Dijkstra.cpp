@@ -1,8 +1,9 @@
 #include "Dijkstra.h"
 
-Dijkstra::Dijkstra(vector<Nodo> adyacentesGrafo[MAX_NODOS])
+Dijkstra::Dijkstra(vector<Nodo> verticesAdyacentes[MAX_NODOS], int numVertices)
+    : numVertices(numVertices)
 {
-    vector<Nodo> adyacentes (*adyacentesGrafo);
+    vector<Nodo> vertices(*verticesAdyacentes);
     for (int i = 0; i <= numVertices; ++i) {
         distancia[i] = __INT_MAX__; //inicializamos todas las distancias con valor infinito
         visitado[i] = false; //inicializamos todos los vértices como no visitados
@@ -34,21 +35,17 @@ void Dijkstra::encontrarCaminos(int inicio)
     cola.push(Nodo(inicio, 0)); // El vertice inicial tiene peso 0
     distancia[inicio] = 0;
     int actual, ady, peso;
-    while (cola.size() != 0)
-    {
-        actual = cola.top().verticeAdyacente; // Nodo con menor peso 
+    while (cola.size() != 0) {
+        actual = cola.top().verticeAdyacente; // Nodo con menor peso
         cola.pop();
-        if (visitado[actual])
-        {
+        if (visitado[actual]) {
             continue; // Ya fue visitado antes
         }
-        visitado[actual] = true; 
-        for (int i = 0; i < adyacentes[actual].size(); ++i)
-        {
-            ady = adyacentes[actual][i].verticeAdyacente; // Se obtiene el adyacente y su peso
-            peso = adyacentes[actual][i].pesoArista;
-            if (!visitado[ady])
-            {
+        visitado[actual] = true;
+        for (int i = 0; i < vertices[actual].size(); ++i) {
+            ady = vertices[actual][i].verticeAdyacente; // Se obtiene el adyacente y su peso
+            peso = vertices[actual][i].pesoArista;
+            if (!visitado[ady]) {
                 // SI no fue visitado se intenta relajar el peso
                 relajacion(actual, ady, peso);
             }

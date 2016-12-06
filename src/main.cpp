@@ -1,10 +1,12 @@
 #include <cstdlib>
+#include <fstream>
 #include "Dijkstra.h"
 
 using namespace std;
 
+string[126] estaciones;
 void abrirImagen();
-//vector<Nodo> initGrafo();
+vector<Nodo> initGrafo();
 
 int main()
 {
@@ -14,7 +16,7 @@ int main()
     cout << "________________________________" << endl;
 
     short opcion;
-	int inicio, destino;
+    int inicio, destino;
     do {
         cout << "1. Mostrar Mapa" << endl;
         cout << "2. Iniciar Viaje" << endl;
@@ -28,10 +30,10 @@ int main()
             cout << "Inicio: ";
             cin >> inicio;
             cout << "Destino: ";
-			cin >> destino;
-			/*
+            cin >> destino;
+            /*
             //funcion que activa el dijkstra
-			Dijkstra d = Dijkstra(adyacentes); // Aun hay que armar el grafo
+			Dijkstra d = Dijkstra(vertices); // Aun hay que armar el grafo
 			d.encontrarCaminos(inicio);
 			
 			cout << "El trayecto mas corto es:" << endl;
@@ -66,52 +68,45 @@ void abrirImagen()
 #endif
 }
 
-/**
- *  Función que inicializa el grafo del metro
- * devuelve un vector con todas las aristas
- */
-/*vector<Nodo> initGrafo()
+vector<Nodo>[126] initGrafo()
 {
-    vector<Nodo> v;
-	// Se agregan todos los transbordos y terminales
-    v.push_back(Nodo("Joo Koon"));
-    v.push_back(Nodo("Jurong East"));
-    v.push_back(Nodo("Buona Vista"));
-    v.push_back(Nodo("Outram Park"));
-    v.push_back(Nodo("Harbour Front"));
-    v.push_back(Nodo("Bukit Panjang"));
-    v.push_back(Nodo("Botanic Gardens"));
-    v.push_back(Nodo("Bishan"));
-    v.push_back(Nodo("Newton"));
-    v.push_back(Nodo("Little India"));
-    v.push_back(Nodo("Dhoby Ghaut"));
-    v.push_back(Nodo("Chinatown"));
-    v.push_back(Nodo("CityHall"));
-    v.push_back(Nodo("Raffles Place"));
-    v.push_back(Nodo("Serangoon"));
-    v.push_back(Nodo("Punggol"));
-    v.push_back(Nodo("Pay Lebar"));
-    v.push_back(Nodo("Bugis"));
-    v.push_back(Nodo("Bayfront"));
-    v.push_back(Nodo("Promenade"));
-    v.push_back(Nodo("Marina Bay"));
-    v.push_back(Nodo("Marina South Pier"));
-    v.push_back(Nodo("Tanah Merah"));
-    v.push_back(Nodo("Pasir Ris"));
-    v.push_back(Nodo("Changi Airport"));
-
-	list<string> s;
-
-	// Agregar las estaciones con que conecta cada uno
-	s.push_back("Pioneer");
-	s.push_back("Boon Lay");
-	s.push_back("Lakeside");
-	s.push_back("Chinese Garden");
-	v[0].addConexion(v[1], s);
-	s.reverse();
-	v[1].addConecion(v[0], s);
-	s.clear();
-	// Repetir para todas....
-
-    return v;
-}*/
+    vector<Nodo> vertices[126];
+	int iVert = 0;
+    // Linea EW
+    fstream archivo("Lineas/EW.txt", ios::in);
+    if (archivo.is_open()) {
+        for (int i = 0; getline(archivo, estaciones[i]) && i<29 ; ++i) {
+            vertices[iVert] = vector<Nodo> (Nodo(iVert, 1));
+            if (i > 0) {
+                vertices[iVert].push_back(vertices[iVert - 1]);
+                vertices[iVert - 1].push_back(vertices[iVert]);
+            }
+            iVert++;
+        }
+        archivo.close;
+    } else
+        cout << "No se pudo abrir el archivo";
+	// Linea CG
+	archivo.open("Lineas/CG.txt", ios::in);
+    if (archivo.is_open()) {
+        for (int i = 0, j = 0; getline(archivo, estaciones[i]) && i<2 ; ++i) {
+            vertices[iVert] = vector<Nodo> (Nodo(iVert, 1));
+            if (i > 29) {
+                vertices[iVert].push_back(vertices[iVert - 1]);
+                vertices[iVert - 1].push_back(vertices[iVert]);
+            }
+			for (j = 0; j < iVert ; ++j) // si son la misma estacion se agregan a ella los nodos
+			{
+				if (estaciones[iVert] == estaciones[j])
+				{
+					vertices[j].push_back(vertices[iVert][0]);
+				}
+			}
+            iVert++;
+        }
+        archivo.close;
+    } else
+        cout << "No se pudo abrir el archivo";
+		//hjfdsahjvkf hg vh ddsadgdasfg askujyfg kajusdfg akujsygf a
+    
+}
