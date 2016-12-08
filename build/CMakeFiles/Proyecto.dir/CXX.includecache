@@ -24,19 +24,19 @@ string
 iostream
 -
 
-/Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Dijkstra.cpp
+/home/daniel/Documentos/Algoritmos y Estructuras de Datos/Proyecto/src/Dijkstra.cpp
 Dijkstra.h
-/Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Dijkstra.h
+/home/daniel/Documentos/Algoritmos y Estructuras de Datos/Proyecto/src/Dijkstra.h
 
-/Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Nodo.cpp
+/home/daniel/Documentos/Algoritmos y Estructuras de Datos/Proyecto/src/Nodo.cpp
 Nodo.h
-/Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Nodo.h
+/home/daniel/Documentos/Algoritmos y Estructuras de Datos/Proyecto/src/Nodo.h
 
-/Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/main.cpp
+/home/daniel/Documentos/Algoritmos y Estructuras de Datos/Proyecto/src/main.cpp
 cstdlib
 -
 fstream
 -
 Dijkstra.h
-/Users/Dann/Documents/Algoritmos y Estructuras de Datos/Proyecto/src/Dijkstra.h
+/home/daniel/Documentos/Algoritmos y Estructuras de Datos/Proyecto/src/Dijkstra.h
 
